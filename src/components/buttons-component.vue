@@ -28,7 +28,7 @@ export default {
     absolute: Boolean,
     small: Boolean,
     fab: Boolean,
-    to: Boolean
+    to: String
   }
 }
 </script>

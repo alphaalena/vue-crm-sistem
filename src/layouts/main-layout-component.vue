@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-component @click="openNav"/>
-    <navigation-component  app="isOpen" :isOpen="isOpen"/>
+    <navigation-component  app :isOpen="isOpen"/>
     <v-main>
       <v-container fluid class="full-parent-size">
     <router-view/>
@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import HeaderComponent from '../components/header-componene'
+import HeaderComponent from '../components/header-component'
 import NavigationComponent from '../components/navigation-component'
 import ButtonsComponent from '../components/buttons-component'
 export default {

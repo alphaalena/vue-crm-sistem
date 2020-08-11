@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer v-model="isOpen" dark  color="#4B928C" absolute :app="app" clipped fixed>
     <v-list  nav>
-      <v-list-item v-for="item in items" :key="item.name"  :to="item.to" :active-class="active">
+      <v-list-item v-for="item in items" :key="item.name"  :to="item.to">
         {{item.name}}
       </v-list-item>
     </v-list>
@@ -34,11 +34,13 @@ export default {
           to: '/categories'
         }
       ],
-      active: true,
-      app: Boolean
+      active: true
     }
   },
-  props: ['isOpen']
+  props: {
+    isOpen: Boolean,
+    app: Boolean
+  }
 }
 </script>
 <style>

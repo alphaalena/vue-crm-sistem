@@ -1,6 +1,6 @@
 <template>
   <div>
-  <v-row class="ma-6">
+  <v-row class="ma-12">
     <v-col>
       <v-row justify="space-between">
         <v-card-title class="text-h4">Счет</v-card-title>
