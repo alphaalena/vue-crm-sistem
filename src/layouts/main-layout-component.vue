@@ -7,17 +7,23 @@
     <router-view/>
       </v-container>
     </v-main>
+    <v-card-actions class="justify-end pr-14 pt-10">
+      <v-spacer/>
+      <buttons-component to="/record" :icon="icon" absolute fab/>
+    </v-card-actions>
   </div>
 </template>
 <script>
 import HeaderComponent from '../components/header-componene'
 import NavigationComponent from '../components/navigation-component'
+import ButtonsComponent from '../components/buttons-component'
 export default {
   name: 'mainLayoutComponent',
-  components: { NavigationComponent, HeaderComponent },
+  components: { ButtonsComponent, NavigationComponent, HeaderComponent },
   data () {
     return {
-      isOpen: true
+      isOpen: true,
+      icon: 'mdi-plus'
     }
   },
   methods: {

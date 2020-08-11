@@ -35,10 +35,6 @@
                 </template>
               </v-simple-table>
             </v-card-text>
-            <v-card-actions class="mt-16 pt-8">
-              <v-spacer/>
-              <buttons-component  fab :icon="iconPlus"/>
-            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
