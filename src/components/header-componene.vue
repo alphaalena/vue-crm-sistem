@@ -4,13 +4,16 @@
     color="amber"
     clipped-left
   >
-    <span class="title ml-3 mr-5 font-weight-light text-uppercase" >srm system</span>
+    <span>
+      <v-app-bar-nav-icon @click="$emit('click')" dark/>
+    </span>
+    <span class="title ml-3 mr-5 white--text font-weight-bold text-uppercase" >srm system</span>
     <v-spacer></v-spacer>
     <v-dialog  v-model="dialog" scrollable class="mr-5  text-decoration-none" max-width="300px">
       <template v-slot:activator="{ on, attrs }">
         <v-btn text
         v-bind="attrs"
-        v-on="on"
+        v-on="on" dark
         >
         Имя пользователя
       </v-btn>

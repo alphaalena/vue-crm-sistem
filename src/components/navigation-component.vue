@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer absolute app clipped fixed>
-    <v-list>
-      <v-list-item v-for="item in items" :key="item.name">
+  <v-navigation-drawer v-model="isOpen" dark  color="#4B928C" absolute :app="app" clipped fixed>
+    <v-list  nav>
+      <v-list-item v-for="item in items" :key="item.name"  :to="item.to" :active-class="active">
         {{item.name}}
       </v-list-item>
     </v-list>
@@ -15,23 +15,30 @@ export default {
       items: [
         {
           name: 'Счет',
-          icon: ''
+          to: '/'
         },
         {
           name: 'История',
-          icon: ''
+          to: '/history'
         },
         {
           name: 'Планирование',
-          icon: ''
+          to: '/planning'
         },
         {
           name: 'Новая запись',
-          icon: 'add'
+          to: '/record'
+        },
+        {
+          name: 'Категории',
+          to: '/categories'
         }
-      ]
+      ],
+      active: true,
+      app: Boolean
     }
-  }
+  },
+  props: ['isOpen']
 }
 </script>
 <style>

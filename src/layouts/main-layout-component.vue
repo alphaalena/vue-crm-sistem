@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header-component/>
-    <navigation-component/>
-    <v-main class="full-screen-height">
+    <header-component @click="openNav"/>
+    <navigation-component  app="isOpen" :isOpen="isOpen"/>
+    <v-main>
       <v-container fluid class="full-parent-size">
     <router-view/>
       </v-container>
@@ -14,7 +14,17 @@ import HeaderComponent from '../components/header-componene'
 import NavigationComponent from '../components/navigation-component'
 export default {
   name: 'mainLayoutComponent',
-  components: { NavigationComponent, HeaderComponent }
+  components: { NavigationComponent, HeaderComponent },
+  data () {
+    return {
+      isOpen: true
+    }
+  },
+  methods: {
+    openNav () {
+      this.isOpen = !this.isOpen
+    }
+  }
 }
 </script>
 <style>
