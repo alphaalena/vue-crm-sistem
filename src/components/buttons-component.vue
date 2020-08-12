@@ -8,6 +8,8 @@
     :fab="fab"
     :small="small"
     :to="to"
+    :width="width"
+    :text="text"
   >
     {{ name }}
     <v-icon :class="{'pl-2': name}">
@@ -28,7 +30,9 @@ export default {
     absolute: Boolean,
     small: Boolean,
     fab: Boolean,
-    to: String
+    to: String,
+    width: String,
+    text: Boolean
   }
 }
 </script>

@@ -6,7 +6,9 @@ import store from './store'
 import dateFilter from './filters/date-filter'
 import './assets/index.css'
 import vuetify from './plugins/vuetify'
+import Vuelidate from 'vuelidate/src'
 
+Vue.use(Vuelidate)
 Vue.config.productionTip = false
 Vue.filter('date', dateFilter)
 

@@ -7,7 +7,7 @@
     <v-app-bar-nav-icon @click="$emit('click')" dark/>
     <span class="white--text">{{date | date('datetime')}}</span>
     <v-spacer></v-spacer>
-    <span class="title ml-3 mr-5 white--text font-weight-bold text-uppercase">srm system</span>
+    <span class="title ml-3 mr-5 white--text font-weight-bold text-uppercase">crm system</span>
     <v-spacer/>
     <v-menu rounded>
       <template v-slot:activator="{ on: menu, attrs }">

@@ -6,7 +6,7 @@ export default function dateFilter (value, format = 'date') {
     options.month = 'long'
     options.year = 'numeric'
   }
-  if (format.includes('date')) {
+  if (format.includes('time')) {
     options.hour = '2-digit'
     options.minute = '2-digit'
     options.second = '2-digit'
