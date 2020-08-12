@@ -1,8 +1,8 @@
 <template>
   <v-btn
+    class="white--text"
     :absolute="absolute"
     color="#2BBBAD"
-    dark
     type="submit"
     large
     :fab="fab"
@@ -10,6 +10,8 @@
     :to="to"
     :width="width"
     :text="text"
+    :disabled="disabled"
+    @click="$emit('click')"
   >
     {{ name }}
     <v-icon :class="{'pl-2': name}">
@@ -32,7 +34,8 @@ export default {
     fab: Boolean,
     to: String,
     width: String,
-    text: Boolean
+    text: Boolean,
+    disabled: Boolean
   }
 }
 </script>

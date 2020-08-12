@@ -4,23 +4,22 @@
     color="amber"
     clipped-left
   >
-    <v-app-bar-nav-icon @click="$emit('click')" dark/>
+    <v-app-bar-nav-icon  dark @click="$emit('click')"/>
     <span class="white--text">{{date | date('datetime')}}</span>
     <v-spacer></v-spacer>
     <span class="title ml-3 mr-5 white--text font-weight-bold text-uppercase">crm system</span>
     <v-spacer/>
-    <v-menu rounded>
+    <v-menu dark rounded>
       <template v-slot:activator="{ on: menu, attrs }">
         <v-btn
           text
-          dark
           v-bind="attrs"
           v-on="{...menu }"
-          class="pr-6"
+          class="pr-6 white--text"
         >User name
         </v-btn>
       </template>
-      <v-list color="#4B928C" dark>
+      <v-list color="#4B928C">
         <v-list-item v-for="(item, index) in items"
                      :key="index"
                      :to="item.path">

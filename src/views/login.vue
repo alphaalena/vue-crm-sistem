@@ -2,16 +2,17 @@
   <v-col cols="12" class="my-5">
     <v-row justify="center">
       <v-dialog v-model="dialog" width="500px">
-        <v-form @submit="submitHandler" ref="form"
+        <v-form @submit="submitHandler"
+                ref="form"
                 v-model="valid"
                 lazy-validation>
          <v-card>
            <v-card-text class="text-h5 font-weight-bold text-center pl-0">Домашняя бухгалтерия</v-card-text>
            <v-text-field  class="px-10" required v-model="email" label="E-mail" placeholder="E-mail" :rules="emailRules"/>
-           <v-text-field :counter="6" :rules="passwordRules" class="px-10"  type="password" label="Password"  placeholder="Пароль" validate/>
+           <v-text-field counter :rules="passwordRules" required v-model="password" class="px-10"  type="password" label="Password"  placeholder="Пароль" validate/>
           <v-card-actions>
             <v-col class="px-8">
-              <buttons-component :disabled="!valid"  @click="validate" type="submit"  width="420px" absolute :icon="icon" :name="name"/>
+              <buttons-component :disabled="!valid"  @click="validate" type="submit"  width="420px" absolute :icon="iconSend" :name="signIn"/>
               <v-row justify="center" class="my-6 pt-10">
                 <span class="font-weight-light pt-2">Нет аккаунта?</span>
                 <v-btn  large text to="/register"   color="#FFC107" class="text--darken-2 text-uppercase">Зарегистрироваться</v-btn>
@@ -42,15 +43,18 @@ export default {
         v => (v && v.length >= 6) || 'Минимальная длина 6 символов'
       ],
       valid: true,
-      icon: 'mdi-send',
-      name: 'Войти'
+      iconSend: 'mdi-send',
+      signIn: 'Войти'
     }
   },
   methods: {
     submitHandler () {
-      if (this.validate()) {
-        this.$router.push('/')
+      this.$router.push('/')
+      const formData = {
+        email: this.email,
+        password: this.password
       }
+      console.log(formData)
     },
     validate () {
       this.$refs.form.validate()

@@ -31,7 +31,7 @@
             <span  class="pa-2 white--text badge red">Расход</span>
           </td>
           <td>
-            <buttons-component :icon="icon" small class="pa-0"/>
+            <buttons-component  :icon="icon" small class="pa-0 white--text"/>
           </td>
         </tr>
         </tbody>

@@ -4,7 +4,7 @@
     <v-col>
       <v-row justify="space-between">
         <v-card-title class="text-h4">Счет</v-card-title>
-        <buttons-component :icon="icon" class="mr-3"/>
+        <buttons-component dark :icon="icon" class="mr-3"/>
       </v-row>
       <hr class="mb-5 ">
       <v-row>
