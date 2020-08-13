@@ -59,6 +59,12 @@ export default {
   methods: {
     submitHandler () {
       this.$router.push('/')
+      const formData = {
+        email: this.email,
+        password: this.password,
+        userName: this.text
+      }
+      console.log(formData)
     },
     validate () {
       this.$refs.form.validate()
