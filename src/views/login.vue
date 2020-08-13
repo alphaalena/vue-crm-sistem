@@ -7,7 +7,7 @@
                 v-model="valid"
                 lazy-validation>
          <v-card>
-           <v-card-text class="text-h5 font-weight-bold text-center pl-0">Домашняя бухгалтерия</v-card-text>
+           <v-card-subtitle class="text-h5 font-weight-bold text-center pl-0">Домашняя бухгалтерия</v-card-subtitle>
            <v-text-field  class="px-10" required v-model="email" label="E-mail" placeholder="E-mail" :rules="emailRules"/>
            <v-text-field counter :rules="passwordRules" required v-model="password" class="px-10"  type="password" label="Password"  placeholder="Пароль" validate/>
           <v-card-actions>
@@ -15,7 +15,7 @@
               <buttons-component :disabled="!valid"  @click="validate" type="submit"  width="420px" absolute :icon="iconSend" :name="signIn"/>
               <v-row justify="center" class="my-6 pt-10">
                 <span class="font-weight-light pt-2">Нет аккаунта?</span>
-                <v-btn  large text to="/register"   color="#FFC107" class="text--darken-2 text-uppercase">Зарегистрироваться</v-btn>
+                <v-btn  large text to="/register" color="#FFC107" class="text--darken-2 text-uppercase">Зарегистрироваться</v-btn>
               </v-row>
             </v-col>
           </v-card-actions>
