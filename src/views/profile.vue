@@ -9,7 +9,7 @@
                       persistent-hint></v-text-field>
         <v-card-actions>
           <v-spacer/>
-          <buttons-component :name="name" :icon="icon" class=" ma-10 px-1 " width="130px"/>
+          <buttons-component @click="nameReturn" :name="name" :icon="icon" class=" ma-10 px-1 " width="130px"/>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -28,6 +28,12 @@ export default {
       icon: 'mdi-send',
       label: '',
       labelName: 'name'
+    }
+  },
+  methods: {
+    nameReturn () {
+      const newName = this.labelName
+      console.log(newName)
     }
   }
 }

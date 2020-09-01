@@ -22,7 +22,7 @@
       <v-list color="#4B928C">
         <v-list-item v-for="(item, index) in items"
                      :key="index"
-                     :to="item.path">
+                     @click="routeTo(item.path)">
           <v-icon class="pr-2 ma-0">{{item.icon}}</v-icon>
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -35,6 +35,7 @@ export default {
   name: 'headerComponent',
   data () {
     return {
+      isSnackbarVisible: false,
       drawer: null,
       dialog: false,
       items: [
@@ -57,6 +58,14 @@ export default {
     setInterval(() => {
       this.date = new Date()
     }, 1000)
+  },
+  methods: {
+    routeTo (path) {
+      this.$router.push(path)
+      if (path === '/login') {
+        this.$store.commit('changeSnackbarVisibility', true)
+      }
+    }
   }
 //  setInterval использую для того чтобы передать актуальное время в Date
 }

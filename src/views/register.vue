@@ -16,7 +16,7 @@
       </div>
       <v-card-actions class="text-center">
         <v-card-text link >Уже есть аккаунт?
-         <a class="pl-2" href="/">Войти! </a>
+         <router-link class="pl-2" to="/login">Войти! </router-link>
         </v-card-text>
       </v-card-actions>
     </v-card>
