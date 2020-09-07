@@ -57,14 +57,17 @@ export default {
     }
   },
   methods: {
-    submitHandler () {
-      this.$router.push('/')
+    async submitHandler () {
       const formData = {
         email: this.email,
         password: this.password,
         userName: this.text
       }
-      console.log(formData)
+      try {
+        await this.$store.dispatch('register', formData)
+        // передаем значение formData в store register
+        await this.$router.push('/')
+      } catch (e) {}
     },
     validate () {
       this.$refs.form.validate()

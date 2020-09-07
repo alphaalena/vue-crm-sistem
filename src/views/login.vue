@@ -24,7 +24,7 @@
                 </v-row>
               </v-col>
             </v-card-actions>
-            <v-snackbar v-model="$store.state.isSnackbarVisible" shaped top right timeout="2000">
+            <v-snackbar v-model="$store.state.isSnackbarVisible" shaped bottom>
               Вы вышли из системы
             </v-snackbar>
           </v-card>
