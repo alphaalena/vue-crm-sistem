@@ -1,9 +1,7 @@
 import firebase from 'firebase/app'
 
 export default {
-  state: {
-    error: null
-  },
+  state: {},
   actions: {
     async login ({ dispatch, commit }, { email, password }) {
       try {
@@ -39,9 +37,5 @@ export default {
     //    получаем id пользователя, если user не пустой
     }
   },
-  mutations: {
-    setError (state, error) {
-      state.error = error
-    }
-  }
+  mutations: {}
 }
