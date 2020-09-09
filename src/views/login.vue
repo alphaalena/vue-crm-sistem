@@ -78,6 +78,7 @@ export default {
       },
       set (value) {
         this.$store.commit('changeSnackbarVisibility', value)
+      //  настройка отображения isSnackBarVisible через гетерс и сеттерс
       }
     }
   }

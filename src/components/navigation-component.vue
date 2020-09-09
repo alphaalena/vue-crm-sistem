@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer v-model="isOpen" dark  color="#4B928C" absolute :app="app" clipped fixed>
-    <v-list  nav>
+  <v-navigation-drawer v-model="isOpenNavigation" dark  color="#4B928C" absolute clipped fixed>
+    <v-list nav>
       <v-list-item v-for="item in items" :key="item.name"  :to="item.to">
         {{item.name}}
       </v-list-item>
@@ -38,8 +38,17 @@ export default {
     }
   },
   props: {
-    isOpen: Boolean,
-    app: Boolean
+  },
+  computed: {
+    isOpenNavigation: {
+      get () {
+        return this.$store.state.isOpenNavigation
+      },
+      set (value) {
+        this.$store.commit('changeIsOpenNavigation', value)
+      }
+    //  через геттерс и сетерс настраиваем отображение навигации
+    }
   }
 }
 </script>

@@ -16,7 +16,7 @@
           v-bind="attrs"
           v-on="{...menu }"
           class="pr-6 white--text"
-        >User name
+        >{{name}}
         </v-btn>
       </template>
       <v-list color="#4B928C">
@@ -58,16 +58,22 @@ export default {
     setInterval(() => {
       this.date = new Date()
     }, 1000)
-  },
+  }, //  setInterval использую для того чтобы передать актуальное время в Date
   methods: {
     routeTo (path) {
       this.$router.push(path)
       if (path === '/login') {
         this.$store.commit('changeSnackbarVisibility', true)
+        this.$store.commit('clearInfo')
       }
     }
+  },
+  computed: {
+    name () {
+      return this.$store.getters.info.name
+    }
+
   }
-//  setInterval использую для того чтобы передать актуальное время в Date
 }
 </script>
 <style>

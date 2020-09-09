@@ -5,7 +5,7 @@
         <v-card-title>
           <v-card-text class="headline text-center pl-0">Профиль</v-card-text>
         </v-card-title>
-        <v-text-field color="#2BBBAD" class="px-10" required type="text" v-model="labelName" :label="label" hint="Name"
+        <v-text-field color="#2BBBAD" class="px-10" required type="text" v-model="userName" :label="label" hint='name'
                       persistent-hint></v-text-field>
         <v-card-actions>
           <v-spacer/>
@@ -34,6 +34,11 @@ export default {
     nameReturn () {
       const newName = this.labelName
       console.log(newName)
+    }
+  },
+  computed: {
+    userName () {
+      return this.$store.getters.info.name
     }
   }
 }

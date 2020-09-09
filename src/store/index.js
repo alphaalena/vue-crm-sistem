@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import auth from './auth'
+import info from './info'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,8 @@ export default new Vuex.Store({
     isSnackbarVisible: false,
     isErrorFromServerVisible: false,
     errorFromServer: '',
-    error: null
+    error: null,
+    isOpenNavigation: false
   },
   mutations: {
     changeSnackbarVisibility (state, value) {
@@ -27,6 +29,9 @@ export default new Vuex.Store({
     },
     valueErrorFromServer (state, message) {
       state.errorFromServer = message
+    },
+    changeIsOpenNavigation (state, value) {
+      state.isOpenNavigation = value
     }
 
   },
@@ -36,6 +41,7 @@ export default new Vuex.Store({
   },
   actions: {},
   modules: {
-    auth
+    auth,
+    info
   }
 })
