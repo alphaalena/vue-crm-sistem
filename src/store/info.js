@@ -19,7 +19,6 @@ export default {
         const uad = await dispatch('getUserId')
         const ref = await firebase.database().ref(`/users/${uad}/info`).once('value')
         const info = ref.val()
-        console.log(info)
         // eslint-disable-next-line no-debugger
         // debugger
         commit('setInfo', info)

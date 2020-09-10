@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import dateFilter from './filters/date-filter'
+import currencyFilter from './filters/currency-filter'
 import './assets/index.css'
 import vuetify from './plugins/vuetify'
 import Vuelidate from 'vuelidate/src'
@@ -14,6 +15,7 @@ import 'firebase/database'
 Vue.use(Vuelidate)
 Vue.config.productionTip = false
 Vue.filter('date', dateFilter)
+Vue.filter('currency', currencyFilter)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyAesU9M7fLfAvjdOenvPmAUmPleus8GJ5s',
