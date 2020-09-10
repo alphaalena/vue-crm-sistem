@@ -11,7 +11,7 @@
       <v-row v-else>
         <home-bill-component :rates="currency.rates"/>
         <v-col>
-          <home-currency-component/>
+          <home-currency-component :rates="currency.rates" :date="currency.date"/>
         </v-col>
       </v-row>
     </v-col>
