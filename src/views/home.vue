@@ -4,7 +4,7 @@
     <v-col>
       <v-row justify="space-between">
         <v-card-title class="text-h4">Счет</v-card-title>
-        <buttons-component dark :icon="icon" class="mr-3"/>
+        <buttons-component  @click="refresh" dark :icon="icon" class="mr-3"/>
       </v-row>
       <v-divider class="mb-5 "/>
       <loading-component v-if="loading" class="position"/>
@@ -41,6 +41,13 @@ export default {
     // currency принимает значение fetchCurrency при помощи метода dispatch
     this.loading = false
     console.log(this.currency.rates)
+  },
+  methods: {
+    async refresh () {
+      this.loading = true
+      this.currency = await this.$store.dispatch('fetchCurrency')
+      this.loading = false
+    }
   }
 }
 </script>

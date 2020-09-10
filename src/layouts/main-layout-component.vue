@@ -1,5 +1,7 @@
 <template>
   <div>
+    <loading-component v-if="loading"/>
+    <div v-else>
     <header-component @click="openNav"/>
     <navigation-component class="mt-16" :isOpenNavigation="$store.state.isOpenNavigation"/>
     <v-main>
@@ -12,17 +14,20 @@
       <buttons-component to="/record" :icon="icon" absolute fab/>
     </v-card-actions>
   </div>
+  </div>
 </template>
 <script>
 import HeaderComponent from '../components/header-component'
 import NavigationComponent from '../components/navigation-component'
 import ButtonsComponent from '../components/buttons-component'
+import LoadingComponent from '../components/loading-component'
 export default {
   name: 'mainLayoutComponent',
-  components: { ButtonsComponent, NavigationComponent, HeaderComponent },
+  components: { LoadingComponent, ButtonsComponent, NavigationComponent, HeaderComponent },
   data () {
     return {
-      icon: 'mdi-plus'
+      icon: 'mdi-plus',
+      loading: true
     }
   },
   methods: {
@@ -36,6 +41,7 @@ export default {
       await this.$store.dispatch('fetchInfo')
     //  делаем запрос на получение данных у пользователя если в сторе в геттерах нет никакой информации о пользователе методом fetchInfo
     }
+    this.loading = false
   }
 }
 </script>
