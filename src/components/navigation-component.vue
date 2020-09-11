@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="isOpenNavigation" dark  color="#4B928C" absolute clipped fixed>
+  <v-navigation-drawer v-model="isOpenNavigation" dark  color="#4B928C" app absolute clipped fixed>
     <v-list nav>
       <v-list-item v-for="item in items" :key="item.name"  :to="item.to">
         {{item.name}}

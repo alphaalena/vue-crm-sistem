@@ -3,7 +3,7 @@
     <loading-component v-if="loading"/>
     <div v-else>
     <header-component @click="openNav"/>
-    <navigation-component class="mt-16" :isOpenNavigation="$store.state.isOpenNavigation"/>
+    <navigation-component :isOpenNavigation="$store.state.isOpenNavigation"/>
     <v-main>
       <v-container fluid class="full-parent-size">
     <router-view/>

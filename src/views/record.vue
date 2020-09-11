@@ -6,7 +6,7 @@
 
     <v-form>
       <v-card-actions class="input-field" >
-        <v-select label="Выберите категорию" hint="name cat" :items="items"></v-select>
+        <v-select label="Выберите категорию" hint="name cat"></v-select>
       </v-card-actions>
     <v-radio-group>
       <v-radio  value="profit" class="with-gap" label="Доход"></v-radio>

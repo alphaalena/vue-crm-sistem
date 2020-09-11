@@ -72,7 +72,7 @@ export default {
     name () {
       return this.$store.getters.info.name
     }
-
+  // computed свойство для отображение имени из геттерс инфо.нейм
   }
 }
 </script>

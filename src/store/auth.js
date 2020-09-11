@@ -18,7 +18,6 @@ export default {
         // createUserWithEmailAndPassword- метод для создания нового пользователя
         const uad = await dispatch('getUserId')
         // dispatch используем так как обращаемся к actions
-        console.log('getUserId', uad)
         if (uad != null) {
           await firebase.database().ref(`/users/${uad}/info`).set({
             bill: 10000,
